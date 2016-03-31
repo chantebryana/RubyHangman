@@ -1,0 +1,101 @@
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+C:\Users\Chauncy>irb
+irb(main):001:0> word = Quash
+NameError: uninitialized constant Quash
+        from (irb):1
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):002:0> word = "Quash"
+=> "Quash"
+irb(main):003:0> word.upcase
+=> "QUASH"
+irb(main):004:0> word.downcase
+=> "quash"
+irb(main):005:0> word.scan(/./)
+=> ["Q", "u", "a", "s", "h"]
+irb(main):006:0> word.downcase.scan(/./)
+=> ["q", "u", "a", "s", "h"]
+irb(main):007:0> letter = word.downcase.scan(/./)
+=> ["q", "u", "a", "s", "h"]
+irb(main):008:0> letter
+=> ["q", "u", "a", "s", "h"]
+irb(main):009:0> p letter
+["q", "u", "a", "s", "h"]
+=> ["q", "u", "a", "s", "h"]
+irb(main):010:0> letter.each { |x| puts x }
+q
+u
+a
+s
+h
+=> ["q", "u", "a", "s", "h"]
+irb(main):011:0> letter.each { |x| print x }
+quash=> ["q", "u", "a", "s", "h"]
+irb(main):012:0> letter.each { |x| x = "_ ", print x }
+SyntaxError: (irb):12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+letter.each { |x| x = "_ ", print x }
+                                   ^
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):013:0> letter.each { |x| x = _ }
+=> ["q", "u", "a", "s", "h"]
+irb(main):014:0> underscore = letter.each { |x| x = _ }
+=> ["q", "u", "a", "s", "h"]
+irb(main):015:0> underscore
+=> ["q", "u", "a", "s", "h"]
+irb(main):016:0> underscore = letter.each { |x| x = "_" }
+=> ["q", "u", "a", "s", "h"]
+irb(main):017:0> underscore
+=> ["q", "u", "a", "s", "h"]
+irb(main):018:0> print underscore
+["q", "u", "a", "s", "h"]=> nil
+irb(main):019:0> p underscore
+["q", "u", "a", "s", "h"]
+=> ["q", "u", "a", "s", "h"]
+irb(main):020:0> underscore = letter.map { |x| x = "_" }
+=> ["_", "_", "_", "_", "_"]
+irb(main):021:0> underscore.each { |x| print x }
+_____=> ["_", "_", "_", "_", "_"]
+irb(main):022:0> letter.length
+=> 5
+irb(main):023:0> letter.each { |x| x.length print x }
+qArgumentError: wrong number of arguments (1 for 0)
+        from (irb):23:in `length'
+        from (irb):23:in `block in irb_binding'
+        from (irb):23:in `each'
+        from (irb):23
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):024:0> letter.each { |x| letter.length print x }
+qArgumentError: wrong number of arguments (1 for 0)
+        from (irb):24:in `length'
+        from (irb):24:in `block in irb_binding'
+        from (irb):24:in `each'
+        from (irb):24
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):025:0> word.length
+=> 5
+irb(main):026:0> x = 5
+=> 5
+irb(main):027:0> print.5times "_"
+SyntaxError: (irb):27: no .<digit> floating literal anymore; put 0 before dot
+print.5times "_"
+      ^
+(irb):27: syntax error, unexpected tINTEGER, expecting '('
+print.5times "_"
+       ^
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):028:0> x = word.length
+=> 5
+irb(main):029:0> 5.times print "_ "
+_ ArgumentError: wrong number of arguments (1 for 0)
+        from (irb):29:in `times'
+        from (irb):29
+        from C:/Ruby22/bin/irb:11:in `<main>'
+irb(main):030:0> 5.times { print "_ " }
+_ _ _ _ _ => 5
+irb(main):031:0> number = word.length
+=> 5
+irb(main):032:0> number.times { print "_ " }
+_ _ _ _ _ => 5
+irb(main):033:0> underscore.join(" ")
+=> "_ _ _ _ _"
+irb(main):034:0>
