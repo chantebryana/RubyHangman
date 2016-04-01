@@ -12,32 +12,20 @@ print spaces # => "_ _ _ _ _"
 guess = "l"
 letter.each do |i|
   if guess == i 
-    print "success "
+    print guess.downcase + " "
   else 
-    print "failure "
+    print "_ "
   end
 end
 
 =begin
-irb(main):035:0> guess = "l"
-=> "l"
-irb(main):036:0> letter.each do |i|
-irb(main):037:1*   if guess == i
-irb(main):038:2>     print "success "
-irb(main):039:2>   else
-irb(main):040:2*     print "failure "
-irb(main):041:2>   end
-irb(main):042:1> end
-failure failure failure failure failure => ["q", "u", "a", "s", "h"]
-irb(main):043:0> guess = "s"
-=> "s"
-irb(main):044:0> letter.each do |i|
-irb(main):045:1*   if guess == i
-irb(main):046:2>     print "success "
-irb(main):047:2>   else
-irb(main):048:2*     print "failure "
-irb(main):049:2>   end
-irb(main):050:1> end
-failure failure failure success failure => ["q", "u", "a", "s", "h"]
-irb(main):051:0>
+irb(main):051:0> letter.each do |i|
+irb(main):052:1*   if guess == i
+irb(main):053:2>     print guess.downcase + " "
+irb(main):054:2>   else
+irb(main):055:2*     print "_ "
+irb(main):056:2>   end
+irb(main):057:1> end
+_ _ _ s _ => ["q", "u", "a", "s", "h"]
+irb(main):058:0>
 =end
