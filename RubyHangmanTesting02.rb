@@ -10,26 +10,28 @@ letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
 # alternative: ["_", "_", "_"] * " " => "_ _ _"
 #print spaces # => "_ _ _ _ _"
 
-#guess = "s" 
-#gets => concatinated at end of array 'guess'
-guess = ["s", "e", "f", "q"]
+#P2: make a guess: (P2 inputs single layer, presses ENTER)
+#guess = gets.upcase
+#guessArray = []
+#guessArray << guess ; => ["s", "e", "f", "q"], etc
+guessArray = ["s", "e", "f", "q"]
 print "WORD: "
 
-letter.each do |i|
+letter.map do |letterz|
   have_we_found_this_letter_in_the_guessed_list_yet = false
-  guess.each do |j|
-    if i == j
+  guessArray.map do |guessz|
+    if letterz == guessz
       #print i.downcase + " "
 	  have_we_found_this_letter_in_the_guessed_list_yet = true
-	  #break
+	  break
     #else 
       #print "_ "
     end
   end
   if have_we_found_this_letter_in_the_guessed_list_yet
-    #what to do when the hidden-word letter has been guessed before
+    print letterz + " "
   else
-    #what to do when the hidden-word letter has never been guessed
+    print "_ "
   end
 end 
 
