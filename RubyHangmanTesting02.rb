@@ -34,6 +34,18 @@ end
 
 
 print "GRAVEYARD: "
+graveyardArray = Array.new(6)
+=begin
+guessArray.map do |element|
+  graveyardArray << element
+end
+
+also this: 
+
+a = [1, 2, 3, 4, 5]
+b = [11, 22, 33, 44]
+a.map! { |x| x == 5 ? b : x }.flatten!
+=end
 
 guessArray.map do |guessx|
   thisLetterDoesntMatchTheWord = true
