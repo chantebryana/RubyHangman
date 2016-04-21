@@ -29,17 +29,19 @@ guessArray.map do |guessx|
   letter.map do |letterx|
 	  if letterx == guessx 
 		thisLetterDoesntMatchTheWord = false
+		break
+	  else
 		graveyardTally -= 1
-		#break
+		break #something about this "break" breaks something: either I get the correct tally or I get the correct "wrong" letters
 	  end
 	end
 	  if thisLetterDoesntMatchTheWord
 		print guessx + " "
-		print graveyardTally.to_s 
 	  #else
 		#print "_ "
 	  end
 	end
+print "| " + graveyardTally.to_s + " wrong guesses remain"
 
 
 =begin
