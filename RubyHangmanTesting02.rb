@@ -27,7 +27,7 @@ graveyardTally = 6
 guessArray.map do |guessx|
   thisLetterDoesntMatchTheWord = true
   letter.map do |letterx|
-	  if letterx == guessx 
+	  if letterx == guessx # because of my double-breaks, this is effectively letter.0 == guessx (and on and on)
 		thisLetterDoesntMatchTheWord = false
 		break
 	  else
