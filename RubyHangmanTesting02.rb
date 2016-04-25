@@ -30,36 +30,11 @@ guessArray.map do |guessx|
 	  if letterx == guessx # because of my double-breaks, this is effectively letter.0 == guessx (and on and on)
 		thisLetterDoesntMatchTheWord = false
 		break
-	  else
-		graveyardTally -= 1
-		break #something about this "break" breaks something: either I get the correct tally or I get the correct "wrong" letters
 	  end
 	end
 	  if thisLetterDoesntMatchTheWord
 		print guessx + " "
-	  #else
-		#print "_ "
+		graveyardTally -= 1
 	  end
 	end
 print "| " + graveyardTally.to_s + " wrong guesses remain"
-
-
-=begin
-guessArray.map do |element|
-  graveyardArray << element
-end
-
-also this: 
-
-a = [1, 2, 3, 4, 5]
-b = [11, 22, 33, 44]
-a.map! { |x| x == 5 ? b : x }.flatten!
-
-graveyardTally = 6
-while graveyardTally > 0 do 
-  puts graveyardTallly #the actual loop action will be different.
-  graveyardTally -= 1
-end 
-  
-
-=end

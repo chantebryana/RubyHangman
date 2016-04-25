@@ -31,3 +31,26 @@ considerLetters.each do |letter|
 #		doThisWhenFound(letter)
 	end
 end
+
+=begin
+This is what the above code looks like if I combine all of the def's together into one big loop:
+
+$availableFails = 6
+considerLetters = ['a', 'b', 'c']
+matchList = ['c', 'd', 'e']
+
+considerLetters.each do |considerLettersZ|
+  letterNotInList = true
+  matchList.each do |matchListZ|
+    if considerLettersZ == matchListZ
+      letterNotInList = false
+      break
+    end
+  end
+  if letterNotInList
+    print " " + considerLettersZ
+    $availableFails -= 1
+  end
+end
+
+=end 
