@@ -38,5 +38,5 @@ loop do
 		  end
 		end
 	print "| " + graveyardTally.to_s + " wrong guesses remain \n"
-	guessArray #will returning this value help remember variables while looping?  NO
+	#guessArray #will returning this value help remember variables while looping?  NO
 end 
