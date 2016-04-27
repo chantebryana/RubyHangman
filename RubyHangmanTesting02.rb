@@ -1,7 +1,7 @@
-loop do 
-	word = "squish"
-	letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
-	guessArray = []
+word = "squish"
+letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
+guessArray = []
+loop do
 	print "P2, guess a letter: " #(P2 inputs single layer, presses ENTER)
 	guess = gets.chomp.downcase
 	guessArray << guess #=> ex: ["s", "e", "f", "q"]
@@ -38,4 +38,5 @@ loop do
 		  end
 		end
 	print "| " + graveyardTally.to_s + " wrong guesses remain \n"
+	guessArray #will returning this value help remember variables while looping?  NO
 end 
