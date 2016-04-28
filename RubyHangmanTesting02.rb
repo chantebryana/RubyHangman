@@ -1,6 +1,18 @@
-word = "squish"
-letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
+#P1 enters the hangman word:
+print "P1, enter a word: " #(P1 inputs whole word, presses ENTER)
+#word = "squish"
+#letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
+letter = gets.chomp.downcase.scan(/./)
 guessArray = []
+
+#create enough new lines to separate P1's word from P2's guesses:
+x = 0
+while x <= 60
+  puts "###"
+  x += 1
+end
+
+#initiate P2's guessing loop:
 loop do
 	print "P2, guess a letter: " #(P2 inputs single layer, presses ENTER)
 	guess = gets.chomp.downcase
