@@ -1,16 +1,21 @@
 #P1 enters the hangman word:
 print "P1, enter a word: " #(P1 inputs whole word, presses ENTER)
 #word = "squish"
-#letter = word.downcase.scan(/./) # => ["q", "u", "a", "s", "h"]
-letter = gets.chomp.downcase.scan(/./)
+#letter = word.downcase.scan(/./) 
+word = gets.chomp.downcase 
+letter = word.scan(/./) # => ["q", "u", "a", "s", "h"]
+letterTally = letter.length #a potential marker for winning condition?
 guessArray = []
+#graveyardTally = 6
 
+=begin
 #create enough new lines to separate P1's word from P2's guesses:
 x = 0
 while x <= 60
   puts "###"
   x += 1
 end
+=end
 
 #initiate P2's guessing loop:
 loop do
@@ -50,5 +55,12 @@ loop do
 		  end
 		end
 	print "| " + graveyardTally.to_s + " wrong guesses remain \n"
-	#guessArray #will returning this value help remember variables while looping?  NO
+	if 
+	  guessArray == letter 
+	end 
+	if
+	  graveyardTally == 0
+	    print "P2 loses! The correct word was " + word.upcase 
+		break
+	end 
 end 
