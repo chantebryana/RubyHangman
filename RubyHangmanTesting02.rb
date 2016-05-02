@@ -27,6 +27,7 @@ loop do
 	print "WORD: "
 	letter.map do |letterz|
 	  have_we_found_this_letter_in_the_guessed_list_yet = false
+	  $guessTally = 0
 	  guessArray.map do |guessz|
 		if letterz == guessz
 		  have_we_found_this_letter_in_the_guessed_list_yet = true
@@ -35,9 +36,11 @@ loop do
 	  end
 	  if have_we_found_this_letter_in_the_guessed_list_yet
 		print letterz + " "
+		$guessTally += 1
 	  else
 		print "_ "
 	  end
+	  print $guessTally.to_s + "\n"
 	end 
 	print "GRAVEYARD: "
 	graveyardTally = 6
@@ -55,8 +58,9 @@ loop do
 		  end
 		end
 	print "| " + graveyardTally.to_s + " wrong guesses remain \n"
-	if 
-	  guessArray == letter 
+	if letterTally == $guessTally 
+	  print "P2 wins! Good guessing!\n"
+	  break
 	end 
 	if
 	  graveyardTally == 0
