@@ -12,6 +12,10 @@ while x <= 60
   x += 1
 end
 
+print "P1's word: "
+letterTally.times {print "_ "}
+print "\n"
+
 #initiate P2's guessing loop:
 loop do
 	print "P2, guess a letter: " #(P2 inputs single layer, presses ENTER)
