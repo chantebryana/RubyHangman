@@ -8,14 +8,14 @@ letterTally = letter.length #a potential marker for winning condition?
 guessArray = []
 #graveyardTally = 6
 
-=begin
+#=begin
 #create enough new lines to separate P1's word from P2's guesses:
 x = 0
 while x <= 60
   puts "###"
   x += 1
 end
-=end
+#=end
 
 #initiate P2's guessing loop:
 loop do
@@ -25,9 +25,10 @@ loop do
 	#loop: while true; add break condition later on
 	#guessArray = ["u", "e", "f", "q"]
 	print "WORD: "
+	guessTally = 0
 	letter.map do |letterz|
 	  have_we_found_this_letter_in_the_guessed_list_yet = false
-	  $guessTally = 0
+	  #$guessTally = 0
 	  guessArray.map do |guessz|
 		if letterz == guessz
 		  have_we_found_this_letter_in_the_guessed_list_yet = true
@@ -36,12 +37,12 @@ loop do
 	  end
 	  if have_we_found_this_letter_in_the_guessed_list_yet
 		print letterz + " "
-		$guessTally += 1
+		guessTally += 1
 	  else
 		print "_ "
 	  end
-	  print $guessTally.to_s + "\n"
 	end 
+	print guessTally.to_s + "\n"
 	print "GRAVEYARD: "
 	graveyardTally = 6
 	guessArray.map do |guessx|
@@ -58,10 +59,12 @@ loop do
 		  end
 		end
 	print "| " + graveyardTally.to_s + " wrong guesses remain \n"
-	if letterTally == $guessTally 
+#=begin 
+	if letterTally == guessTally 
 	  print "P2 wins! Good guessing!\n"
 	  break
 	end 
+#=end 
 	if
 	  graveyardTally == 0
 	    print "P2 loses! The correct word was " + word.upcase 
